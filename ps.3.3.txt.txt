@@ -1,0 +1,76 @@
+#include <stdio.h>
+
+#define MAX_SIZE 100
+
+int main()
+{
+    int arr[MAX_SIZE];
+    int i, j, n, mean, sum = 0, mode = 0, mode_count = 0;
+
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    printf("Enter elements of the array:\n");
+    for(i=0; i<n; i++)
+    {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    mean = sum / n;
+    printf("Mean = %d\n", mean);
+
+
+    for(i=0; i<n-1; i++)
+    {
+        for(j=0; j<n-i-1; j++)
+        {
+            if(arr[j] > arr[j+1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+
+
+    if(n%2 == 0)
+    {
+        int mid = n/2;
+        int median = (arr[mid-1] + arr[mid])/2;
+        printf("Median = %d\n", median);
+    }
+    else
+    {
+        int mid = n/2;
+        int median = arr[mid];
+        printf("Median = %d\n", median);
+    }
+
+    int curr_count = 1;
+    for(i=1; i<n; i++)
+    {
+        if(arr[i] == arr[i-1])
+        {
+            curr_count++;
+        }
+        else
+        {
+            if(curr_count > mode_count)
+            {
+                mode = arr[i-1];
+                mode_count = curr_count;
+            }
+            curr_count = 1;
+        }
+    }
+    if(curr_count > mode_count)
+    {
+        mode = arr[n-1];
+        mode_count = curr_count;
+    }
+    printf("Mode = %d\n", mode);
+
+    return 0;
+}

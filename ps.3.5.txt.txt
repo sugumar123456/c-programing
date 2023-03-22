@@ -1,0 +1,59 @@
+#include <stdio.h>
+#define MAX_SIZE 100
+
+int main()
+{
+    int arr[MAX_SIZE];
+    int i, j, temp, len, m, n;
+    int max1, max2, min1, min2, sum, diff;
+
+    printf("Enter the array elements: ");
+    scanf("%d", &arr[0]);
+    len = 1;
+    while (scanf("%d", &arr[len]) == 1) {
+        len++;
+    }
+    printf("Enter the value of M: ");
+    scanf("%d", &m);
+    printf("Enter the value of N: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < len; i++) {
+        for (j = i + 1; j < len; j++) {
+            if (arr[i] < arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    max1 = arr[m-1];
+
+    min1 = arr[len-n];
+
+    for (i = 0; i < len; i++) {
+        for (j = i + 1; j < len; j++) {
+            if (arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    max2 = arr[m-1];
+
+    min2 = arr[len-n];
+
+    sum = max1 + min1;
+
+    diff = max2 - min2;
+
+    printf("1st Maximum Number = %d\n", max1);
+    printf("3rd Minimum Number = %d\n", min1);
+    printf("Sum = %d\n", sum);
+    printf("Difference = %d\n", diff);
+
+    return 0;
+}
