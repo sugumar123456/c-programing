@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int n, sum = 0, i = 1;
+
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    while (i <= n) {
+        sum += i;
+        i++;
+    }
+
+    printf("Sum of first %d natural numbers = %d", n, sum);
+
+    return 0;
+}
+
+
+output
+Enter a positive integer: 55
+Sum of first 55 natural numbers = 1540
