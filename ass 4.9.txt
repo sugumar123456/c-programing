@@ -1,0 +1,6 @@
+If the array begins at memory location 1200, the output of the program would be:
+Output:
+1200, 1200, 1200
+This is because the memory address of the first element of the array (arr) and 
+the memory address of the first element of the array using the indexing operator (&arr[0]) would be the same, 
+which is the starting memory address of the array itself (&arr).

@@ -1,0 +1,9 @@
+The program will output the value of the first element of the array a, which is 1.
+
+Explanation:
+
+The array a is a 3x4 array that is initialized with some values.
+In the main() function, a pointer ptr is declared and initialized to point to the first element of a.
+The fun() function is called with the address of ptr as an argument. Since ptr points to an integer, &ptr is a pointer to a pointer to an integer, which is what fun() expects as an argument.
+Inside fun(), the value of the integer pointed to by the pointer to a pointer is printed, which is the first element of a, i.e., 1
+
