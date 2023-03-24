@@ -1,0 +1,127 @@
+#include <stdio.h>
+
+int main() {
+
+   int marks[4], i, total = 0;
+
+   float aggregate;
+
+   for (i = 0; i < 4; i++) {
+
+      printf("Enter the marks obtained in subject %d: ", i + 1);
+
+      scanf("%d", &marks[i]);
+
+      total += marks[i];
+
+   }
+
+   aggregate = (float)total / 4;
+
+   printf("Total marks obtained = %d\n", total);
+
+   printf("Aggregate marks obtained = %.2f\n", aggregate);
+
+   if (aggregate >= 75)
+
+      printf("Grade: Distinction\n");
+
+   else if (aggregate >= 60 && aggregate < 75)
+
+      printf("Grade: First Division\n");
+
+   else if (aggregate >= 50 && aggregate < 60)
+
+      printf("Grade: Second Division\n");
+
+   else if (aggregate >= 40 && aggregate < 50)
+
+      printf("Grade: Third Division\n");
+
+   else
+
+      printf("Grade: Fail\n");
+
+   return 0;
+
+}
+
+output: 
+
+Enter the marks obtained in subject 1: 90
+
+Enter the marks obtained in subject 2: 91
+
+Enter the marks obtained in subject 3: 92
+
+Enter the marks obtained in subject 4: 93
+
+Total marks obtained = 366
+
+Aggregate marks obtained = 91.50
+
+Grade: Distinction
+
+ 2nd.
+
+Enter the marks obtained in subject 1: 18
+
+Enter the marks obtained in subject 2: 76
+
+Enter the marks obtained in subject 3: 93
+
+Enter the marks obtained in subject 4: 65
+
+Total marks obtained = 252
+
+Aggregate marks obtained = 63.00
+
+Grade: First Division
+
+3rd 
+
+Enter the marks obtained in subject 1: 73
+
+Enter the marks obtained in subject 2: 78
+
+Enter the marks obtained in subject 3: 79
+
+Enter the marks obtained in subject 4: 75
+
+Total marks obtained = 305
+
+Aggregate marks obtained = 76.25
+
+Grade: Distinction
+
+4th 
+
+Enter the marks obtained in subject 1: 98
+
+Enter the marks obtained in subject 2: 106
+
+Enter the marks obtained in subject 3: 120
+
+Enter the marks obtained in subject 4: 95
+
+Total marks obtained = 419
+
+Aggregate marks obtained = 104.75
+
+Grade: Distinction
+
+5th 
+
+Enter the marks obtained in subject 1: 98
+
+Enter the marks obtained in subject 2: 106
+
+Enter the marks obtained in subject 3: 120
+
+Enter the marks obtained in subject 4: 95
+
+Total marks obtained = 419
+
+Aggregate marks obtained = 104.75
+
+Grade: Distinction
